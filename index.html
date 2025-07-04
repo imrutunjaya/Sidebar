@@ -17,20 +17,19 @@
 
         body {
             min-height: 100vh;
-            background: transparent;
+            background: #f0f0f0; /* Light background for contrast */
             padding: 20px;
             display: flex; /* Use flexbox for layout */
         }
 
         .sidebar {
             width: 100%; /* Set sidebar to full width */
-            max-width: 300px; /* Optional: limit max width */
             height: 100vh;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.1); /* Transparent background */
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 30px 20px;
             color: rgba(0, 0, 0, 0.9);
             display: flex;
@@ -55,12 +54,12 @@
         }
 
         .nav-item:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.2);
             transform: translateX(5px); /* Slide effect on hover */
         }
 
         .nav-item.active {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.25);
             font-weight: 500;
         }
 
@@ -76,32 +75,8 @@
             transform: scale(1.1); /* Scale icon on hover */
         }
 
-        .bottom-menu {
-            margin-top: auto;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: flex-start; /* Align social icons to the left */
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .social-icon {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .social-icon:hover {
-            background: rgba(255, 255, 255, 0.35);
-            transform: translateY(-3px);
+        .quick-actions {
+            margin-top: 20px; /* Add margin for spacing */
         }
 
         .section-title {
@@ -119,23 +94,24 @@
         }
 
         .tile {
-            background: rgba(255,255,255,0.1);
-            border-radius: 8px;
-            padding: 10px;
+            background: rgba(255,255,255,0.2); /* Slightly transparent background */
+            border-radius: 10px;
+            padding: 10px; /* Reduced padding for smaller cards */
             text-align: center;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow for card effect */
         }
 
         .tile:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-5px); /* Lift effect on hover */
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px); /* Lift effect on hover */
         }
 
         .tile i {
             display: block;
             margin-bottom: 5px;
-            font-size: 1rem;
+            font-size: 1.2rem; /* Adjust icon size */
             transition: transform 0.2s ease; /* Add transition for tile icon */
         }
 
@@ -144,9 +120,39 @@
         }
 
         .tile span {
-            font-size: 0.7rem;
+            font-size: 0.8rem; /* Adjust font size */
             display: block;
+            font-weight: 500; /* Bold text */
         }
+
+        .bottom-menu {
+            margin-top: auto;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: flex-start; /* Align social icons to the left */
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .social-icon {
+            width: 35px; /* Adjust size for better visibility */
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: rgba(255, 255, 255, 0.35);
+            transform: translateY(-3px);
+        }
+
     </style>
 </head>
 <body>
