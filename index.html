@@ -16,21 +16,18 @@
         }
 
         body {
-            min-height: 100vh;
+            height: 100vh; /* Set body height to full viewport height */
             background: #f0f0f0; /* Light background for contrast */
-            padding: 2px;
             display: flex; /* Use flexbox for layout */
         }
 
         .sidebar {
-            width: 100%; /* Set sidebar to full width */
-            height: 100vh;
-            background: rgba(255, 255, 255, 0.1); /* Transparent background */
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 0px 0px;
+            width: calc(100% - 20px); /* Full width minus gaps */
+            height: calc(100vh - 20px); /* Full height minus gaps */
+            background: rgba(255, 255, 255, 0.05); /* More transparent background */
+            backdrop-filter: blur(15px); /* Slightly less blur for clarity */
+            border-radius: 10px; /* Rounded corners */
+            margin: 10px; /* Add margin for gaps */
             color: rgba(0, 0, 0, 0.9);
             display: flex;
             flex-direction: column;
@@ -39,15 +36,16 @@
 
         .nav-links {
             flex: 1;
-            margin: 20px 0;
+            margin: 0; /* Remove margin to eliminate gaps */
+            padding: 0; /* Remove padding to eliminate gaps */
         }
 
         .nav-item {
             display: flex;
             align-items: center;
-            padding: 1px 5px;
+            padding: 12px 15px;
             border-radius: 8px;
-            margin-bottom: 0px;
+            margin-bottom: 10px;
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: left; /* Align text to the left */
