@@ -19,19 +19,68 @@
             height: 100vh; /* Set body height to full viewport height */
             background: #f0f0f0; /* Light background for contrast */
             display: flex; /* Use flexbox for layout */
+            overflow: hidden; /* Prevent scrolling on body */
         }
 
         .sidebar {
-            width: calc(100% - 20px); /* Full width minus gaps */
-            height: calc(100vh - 20px); /* Full height minus gaps */
-            background: rgba(255, 255, 255, 0.05); /* More transparent background */
-            backdrop-filter: blur(15px); /* Slightly less blur for clarity */
-            border-radius: 10px; /* Rounded corners */
-            margin: 10px; /* Add margin for gaps */
-            color: rgba(0, 0, 0, 0.9);
+            width: 100%; /* Full width */
+            height: 100vh; /* Full height */
+            background: rgba(255, 255, 255, 0.1); /* Transparent background */
+            backdrop-filter: blur(20px); /* Blur effect for glassy look */
+            color: rgba(0, 0, 0, 0.9); /* Light text color for contrast */
             display: flex;
             flex-direction: column;
             transition: all 0.3s ease;
+            padding: 0; /* Remove padding from sidebar */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+        .header-card {
+            padding: 10px; /* Padding for header card */
+            border: 1px solid rgba(0, 0, 0, 0.5); /* Thin border */
+            border-radius: 10px; /* Rounded corners for card */
+            margin: 5px; /* Margin around the card */
+            text-align: center; /* Center the title */
+        }
+
+        .header-card h1 {
+            font-size: 1.5rem; /* Increase font size */
+            font-weight: 600; /* Bold font weight */
+            color: #000; /* Black color for title */
+            margin: 0; /* Remove default margin */
+        }
+
+        .quick-actions {
+            padding: 5px; /* Reduced padding */
+            border: 1px solid rgba(0, 0, 0, 0.5); /* Thin border */
+            border-radius: 10px; /* Rounded corners for card */
+            margin: 5px; /* Reduced margin around the card */
+            display: flex; /* Horizontal layout */
+            justify-content: space-around; /* Space items evenly */
+            align-items: center; /* Center items vertically */
+            background: transparent; /* Remove background color */
+        }
+
+        .quick-actions h4 {
+            font-size: 1rem; /* Title size */
+            margin-bottom: 5px; /* Space below title */
+            color: rgba(0, 0, 0, 0.8); /* Title color */
+        }
+
+        .quick-actions button {
+            background-color: transparent; /* Transparent button background */
+            color: black; /* Button text color */
+            border: 1px solid black; /* Button border */
+            border-radius: 5px; /* Rounded corners */
+            padding: 5px; /* Reduced padding for button */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Transition for hover effect */
+            width: 35px; /* Fixed width for buttons */
+            margin: 0 5px; /* Space between buttons */
+        }
+
+        .quick-actions button:hover {
+            background-color: rgba(0, 0, 0, 0.1); /* Light background on hover */
         }
 
         .nav-links {
@@ -73,15 +122,11 @@
             transform: scale(1.1); /* Scale icon on hover */
         }
 
-        .quick-actions {
-            margin-top: 20px; /* Add margin for spacing */
-        }
-
         .section-title {
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: rgba(0,0,0,0.6);
+            color: rgba(0,0,0,0.6); /* Light color for section title */
             margin: 15px 0 10px;
         }
 
@@ -127,23 +172,35 @@
             margin-top: auto;
         }
 
+        .social-card {
+            padding: 0; /* No padding */
+            border: 1px solid rgba(0, 0, 0, 0.5); /* Thin border */
+            border-radius: 10px; /* Rounded corners */
+            margin: 5px; /* Margin around the card */
+            display: flex; /* Center items */
+            justify-content: center; /* Center the icons */
+            align-items: center; /* Center items vertically */
+            background: transparent; /* Remove background color */
+        }
+
         .social-icons {
             display: flex;
-            justify-content: flex-start; /* Align social icons to the left */
-            gap: 15px;
-            margin-bottom: 20px;
+            justify-content: center; /* Center the icons */
+            width: 100%; /* Full width */
+            margin: 10px 0; /* Margin for spacing */
         }
 
         .social-icon {
             width: 35px; /* Adjust size for better visibility */
             height: 35px;
-            border-radius: 50%;
+            border-radius: 50%; /* Circular shape */
             background: rgba(255, 255, 255, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
+            margin: 0 5px; /* Space between icons */
         }
 
         .social-icon:hover {
@@ -155,6 +212,17 @@
 </head>
 <body>
     <div class="sidebar">
+        <div class="header-card">
+            <h1>Dr. Researcher</h1> <!-- Title Section -->
+        </div>
+        <div class="quick-actions">
+            <h4>Quick Actions</h4>
+            <button><i class="fas fa-plus"></i></button> <!-- New Project -->
+            <button><i class="fas fa-upload"></i></button> <!-- Upload Data -->
+            <button><i class="fas fa-calendar-plus"></i></button> <!-- Schedule Meeting -->
+            <button><i class="fas fa-file-alt"></i></button> <!-- View Reports -->
+            <button><i class="fas fa-users-cog"></i></button> <!-- Manage Team -->
+        </div>
         <div class="nav-links">
             <div class="nav-item active">
                 <i class="fas fa-home"></i>
@@ -206,25 +274,7 @@
             </div>
         </div>
 
-        <div class="quick-actions">
-            <h4 class="section-title">Quick Actions</h4>
-            <div class="action-tiles">
-                <div class="tile">
-                    <i class="fas fa-plus"></i>
-                    <span>New Project</span>
-                </div>
-                <div class="tile">
-                    <i class="fas fa-upload"></i>
-                    <span>Upload Data</span>
-                </div>
-                <div class="tile">
-                    <i class="fas fa-chart-pie"></i>
-                    <span>Visualize</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="bottom-menu">
+        <div class="social-card">
             <div class="social-icons">
                 <div class="social-icon">
                     <i class="fab fa-twitter"></i>
@@ -240,6 +290,10 @@
                 </div>
             </div>
         </div>
+
+        <div class="bottom-menu">
+            <!-- Additional content can go here -->
+        </div>
     </div>
 
     <script>
@@ -249,6 +303,34 @@
                 document.querySelector('.nav-item.active').classList.remove('active');
                 this.classList.add('active');
             });
+        });
+
+        // Toggle theme button functionality
+        document.getElementById('toggleTheme').addEventListener('click', function() {
+            const sidebar = document.querySelector('.sidebar');
+            if (sidebar.style.background === 'rgb(0, 0, 0)') {
+                sidebar.style.background = 'rgba(255, 255, 255, 0.1)'; // Reset to original
+                sidebar.style.color = 'rgba(0, 0, 0, 0.9)'; // Reset text color
+                document.querySelectorAll('.nav-item, .quick-actions h4').forEach(item => {
+                    item.style.color = 'rgba(0, 0, 0, 0.9)'; // Reset nav item color
+                });
+                document.querySelectorAll('.quick-actions button').forEach(item => {
+                    item.style.backgroundColor = 'transparent'; // Reset button color
+                    item.style.color = 'black'; // Reset button text color
+                    item.style.border = '1px solid black'; // Reset button border
+                });
+            } else {
+                sidebar.style.background = 'rgb(0, 0, 0)'; // Set to pitch black
+                sidebar.style.color = 'white'; // Change text color to white
+                document.querySelectorAll('.nav-item, .quick-actions h4').forEach(item => {
+                    item.style.color = 'white'; // Change nav item color to white
+                });
+                document.querySelectorAll('.quick-actions button').forEach(item => {
+                    item.style.backgroundColor = 'transparent'; // Keep button background transparent
+                    item.style.color = 'white'; // Change button text color to white
+                    item.style.border = '1px solid white'; // Change button border to white
+                });
+            }
         });
     </script>
 </body>
